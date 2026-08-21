@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { Project } from "@/data/projects";
 import { accentClasses } from "@/lib/accent";
 import { Badge } from "@/components/Badge";
-import { MockupPlaceholder } from "@/components/MockupPlaceholder";
+import { ProjectMedia } from "@/components/ProjectMedia";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { dictionary } from "@/i18n/dictionary";
 
@@ -33,24 +33,15 @@ export function ProjectCard({ project }: { project: Project }) {
         )}
       </div>
 
-      <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
-        <MockupPlaceholder
-          accent={project.accent}
-          label={`${project.name} — ${t.work.overview}`}
+      <div className="mt-6">
+        <ProjectMedia
+          project={project}
+          lang={lang}
           mockupWord={t.work.mockup}
+          overviewLabel={t.work.overview}
+          detailLabel={t.work.detail}
+          flowLabel={t.work.flow}
         />
-        <MockupPlaceholder
-          accent={project.accent}
-          label={`${project.name} — ${t.work.detail}`}
-          mockupWord={t.work.mockup}
-        />
-        <div className="hidden sm:block">
-          <MockupPlaceholder
-            accent={project.accent}
-            label={`${project.name} — ${t.work.flow}`}
-            mockupWord={t.work.mockup}
-          />
-        </div>
       </div>
 
       <dl className="mt-6 grid gap-5 sm:grid-cols-2">

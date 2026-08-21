@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Badge } from "@/components/Badge";
-import { MockupPlaceholder } from "@/components/MockupPlaceholder";
+import { ProjectMedia } from "@/components/ProjectMedia";
 import type { Project } from "@/data/projects";
 import { accentClasses } from "@/lib/accent";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -42,21 +42,14 @@ export function CaseStudyContent({ project }: { project: Project }) {
           )}
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          <MockupPlaceholder
-            accent={project.accent}
-            label={`${project.name} — ${t.work.overview}`}
+        <div className="mt-8">
+          <ProjectMedia
+            project={project}
+            lang={lang}
             mockupWord={t.work.mockup}
-          />
-          <MockupPlaceholder
-            accent={project.accent}
-            label={`${project.name} — ${t.work.detail}`}
-            mockupWord={t.work.mockup}
-          />
-          <MockupPlaceholder
-            accent={project.accent}
-            label={`${project.name} — ${t.work.flow}`}
-            mockupWord={t.work.mockup}
+            overviewLabel={t.work.overview}
+            detailLabel={t.work.detail}
+            flowLabel={t.work.flow}
           />
         </div>
 

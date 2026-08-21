@@ -7,6 +7,11 @@ export type Accent = "violet" | "sky" | "rose";
 
 export type LocalizedText = { en: string; pt: string };
 
+export type Screenshot = {
+  src: string;
+  caption: LocalizedText;
+};
+
 export type Project = {
   slug: string;
   name: string;
@@ -19,6 +24,9 @@ export type Project = {
   caseStudyDecisions?: LocalizedText[];
   /** Feature breadth, shown only on the case study page. */
   highlights?: LocalizedText[];
+  /** Real screenshots, captured from a running local build. Falls back to
+   *  mockup placeholders when absent. */
+  screenshots?: Screenshot[];
   status?: LocalizedText;
   links?: ProjectLink[];
   accent: Accent;
@@ -101,6 +109,20 @@ export const projects: Project[] = [
         pt: "Acesso baseado em papel (Admin/Equipe)",
       },
     ],
+    screenshots: [
+      {
+        src: "screenshots/kyma-dashboard.png",
+        caption: { en: "Dashboard", pt: "Painel" },
+      },
+      {
+        src: "screenshots/kyma-tickets.png",
+        caption: { en: "Ticket list", pt: "Lista de tickets" },
+      },
+      {
+        src: "screenshots/kyma-custom-fields.png",
+        caption: { en: "Custom fields (admin)", pt: "Campos personalizados (admin)" },
+      },
+    ],
     links: [{ label: "GitHub", href: "https://github.com/Kensyy/kyma" }],
     accent: "violet",
   },
@@ -173,6 +195,16 @@ export const projects: Project[] = [
         pt: "Bilíngue — inglês e português brasileiro",
       },
     ],
+    screenshots: [
+      {
+        src: "screenshots/atlas-home.png",
+        caption: { en: "Home — swipe & match", pt: "Início — swipe e match" },
+      },
+      {
+        src: "screenshots/atlas-movies.png",
+        caption: { en: "Film catalog", pt: "Catálogo de filmes" },
+      },
+    ],
     links: [{ label: "GitHub", href: "https://github.com/Kensyy/atlas-app" }],
     accent: "sky",
   },
@@ -238,6 +270,12 @@ export const projects: Project[] = [
       {
         en: "Push notifications when a friend starts sharing",
         pt: "Notificações push quando um amigo começa a compartilhar",
+      },
+    ],
+    screenshots: [
+      {
+        src: "screenshots/pullup-onboarding.png",
+        caption: { en: "Onboarding", pt: "Onboarding" },
       },
     ],
     links: [{ label: "GitHub", href: "https://github.com/Kensyy/pullup" }],
