@@ -10,3 +10,11 @@ export const socialLinks = {
 };
 
 export const repoUrl = "https://github.com/Kensyy/portfolio";
+
+// Static assets referenced outside Next's metadata system (plain <img>/<a>
+// tags) need the base path prepended by hand — GitHub Pages project sites
+// serve from /portfolio/, and neither of those honors basePath on their own.
+export function withBasePath(path: string) {
+  const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  return `${base}/${path.replace(/^\//, "")}`;
+}

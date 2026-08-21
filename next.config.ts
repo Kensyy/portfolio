@@ -17,6 +17,10 @@ const nextConfig: NextConfig = {
   // a runtime call would drift and trigger a hydration mismatch.
   env: {
     NEXT_PUBLIC_BUILD_DATE: new Date().toISOString().slice(0, 10),
+    // next/image's `unoptimized` mode doesn't auto-prefix basePath, and a
+    // bare relative <a href> breaks on nested routes like /work/atlas —
+    // both need this to build correct URLs by hand.
+    NEXT_PUBLIC_BASE_PATH: isGithubActions ? `/${repoName}` : "",
   },
 };
 

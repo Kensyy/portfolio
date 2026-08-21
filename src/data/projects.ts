@@ -48,8 +48,8 @@ export const projects: Project[] = [
       pt: "Em desenvolvimento inicial — repositório criado, mockups no Figma em andamento",
     },
     decision: {
-      en: "The integrations are built as connectors, not a single hard-coded workflow, so Kyma can map onto whatever ticketing or asset system a team already runs. First connector is for TeamDynamix, the system schools like UNCW use, so it fits into the infrastructure IT departments already have instead of asking them to rip it out.",
-      pt: "As integrações são construídas como conectores, não como um fluxo único fixo no código, para que o Kyma se adapte a qualquer sistema de tickets ou ativos que um time já use. O primeiro conector é para o TeamDynamix, sistema usado por instituições como a UNCW, para se encaixar na infraestrutura que os times de TI já têm em vez de pedir para trocarem tudo.",
+      en: "The integrations are built as connectors, not a single hard-coded workflow, so Kyma can map onto whatever ticketing or asset system a team already runs. First connector is for TeamDynamix, so it fits into the infrastructure IT departments already have instead of asking them to rip it out.",
+      pt: "As integrações são construídas como conectores, não como um fluxo único fixo no código, para que o Kyma se adapte a qualquer sistema de tickets ou ativos que um time já use. O primeiro conector é para o TeamDynamix, para se encaixar na infraestrutura que os times de TI já têm em vez de pedir para trocarem tudo.",
     },
     links: [{ label: "GitHub", href: "https://github.com/Kensyy/kyma" }],
     accent: "violet",
@@ -85,8 +85,8 @@ export const projects: Project[] = [
       "Redis",
     ],
     decision: {
-      en: "It's a monorepo from day one: apps/web, apps/mobile, and shared packages/ui, so web and mobile share types, API clients, and UI without duplicating logic. The MVP leaves out AI recommendations and streaming-availability lookups on purpose. Getting a focused core out — discovery, tracking, reviews — mattered more than matching every feature a mature tracker has.",
-      pt: "É um monorepo desde o início: apps/web, apps/mobile e packages/ui compartilhados, para que web e mobile dividam tipos, clientes de API e UI sem duplicar lógica. O MVP deixa de fora, de propósito, recomendações por IA e disponibilidade em serviços de streaming. Lançar um núcleo focado — descoberta, acompanhamento, avaliações — importou mais do que cobrir cada recurso que um tracker maduro tem.",
+      en: "It's a monorepo from day one: apps/web, apps/mobile, and shared packages/ui, so web and mobile share types, API clients, and UI without duplicating logic. The MVP leaves out streaming-availability lookups on purpose. Getting a focused core out — discovery, tracking, reviews — mattered more than matching every feature a mature tracker has.",
+      pt: "É um monorepo desde o início: apps/web, apps/mobile e packages/ui compartilhados, para que web e mobile dividam tipos, clientes de API e UI sem duplicar lógica. O MVP deixa de fora, de propósito, a disponibilidade em serviços de streaming. Lançar um núcleo focado — descoberta, acompanhamento, avaliações — importou mais do que cobrir cada recurso que um tracker maduro tem.",
     },
     links: [{ label: "GitHub", href: "https://github.com/Kensyy/atlas-app" }],
     accent: "sky",
@@ -108,8 +108,8 @@ export const projects: Project[] = [
     },
     stack: ["React Native", "Expo", "Supabase"],
     decision: {
-      en: "Age verification runs on government ID instead of a .edu email gate. It's more friction at signup, but it actually confirms who someone is instead of trusting an email domain, and it works for anyone, not just people at a .edu school. No AI branding anywhere in the product either — sharing your location for an hour is just a thing you toggle, not a pitch.",
-      pt: "A verificação de idade usa documento oficial em vez de um filtro por e-mail .edu. É mais fricção no cadastro, mas realmente confirma quem é a pessoa em vez de confiar num domínio de e-mail, e funciona para qualquer um, não só quem estuda em instituições americanas. Também não há nenhuma marca de IA no produto — compartilhar sua localização por uma hora é só algo que você liga, não um discurso de venda.",
+      en: "Age verification runs on government ID instead of a .edu email gate. It's more friction at signup, but it actually confirms who someone is instead of trusting an email domain, and it works for anyone, not just people at a .edu school.",
+      pt: "A verificação de idade usa documento oficial em vez de um filtro por e-mail .edu. É mais fricção no cadastro, mas realmente confirma quem é a pessoa em vez de confiar num domínio de e-mail, e funciona para qualquer um, não só quem estuda em instituições americanas.",
     },
     links: [{ label: "GitHub", href: "https://github.com/Kensyy/pullup" }],
     accent: "rose",

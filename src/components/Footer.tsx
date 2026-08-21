@@ -1,6 +1,6 @@
 "use client";
 
-import { socialLinks, repoUrl } from "@/lib/site";
+import { socialLinks, repoUrl, withBasePath } from "@/lib/site";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { dictionary } from "@/i18n/dictionary";
 import { CopyEmailButton } from "@/components/CopyEmailButton";
@@ -13,7 +13,11 @@ export function Footer() {
     { label: t.github, href: socialLinks.github },
     { label: t.linkedin, href: socialLinks.linkedin },
     { label: t.viewSource, href: repoUrl },
-    { label: t.vcard, href: "victor-gabriel-da-silva.vcf", download: true },
+    {
+      label: t.vcard,
+      href: withBasePath("victor-gabriel-da-silva.vcf"),
+      download: true,
+    },
   ];
 
   return (
