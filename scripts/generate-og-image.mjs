@@ -7,7 +7,10 @@ const height = 630;
 const projects = [
   { name: "Kyma", slug: "kyma", color: "#8b5cf6", pitch: "Configurable internal IT toolkit for ticket tracking, asset/inventory management, and admin dashboards in one platform." },
   { name: "Atlas", slug: "atlas", color: "#0ea5e9", pitch: "A platform for discovering, tracking, reviewing, and discussing movies & TV shows." },
-  { name: "PullUp", slug: "pullup", color: "#f43f5e", pitch: "A mobile social app for students with opt-in, time-boxed location sharing." },
+  { name: "PullUp", slug: "pullup", color: "#f43f5e", pitch: "A mobile social app for opt-in, time-boxed location sharing — privacy and safety as core constraints, not afterthoughts." },
+  { name: "Buildle", slug: "buildle", color: "#f59e0b", pitch: "A Wordle-style daily game — guess the PC build (CPU, motherboard, RAM, GPU, PSU) in limited tries." },
+  { name: "Tiermaker", slug: "tiermaker", color: "#10b981", pitch: "A real-time, collaborative tier-list maker — create a board, upload images, and drag them into tiers together with friends." },
+  { name: "Umbra", slug: "umbra", color: "#6366f1", pitch: "A multiplayer action roguelike built around Brazilian folklore — solo or co-op up to 6 players." },
 ];
 
 function escapeXml(text) {
@@ -37,7 +40,9 @@ async function renderHomepage() {
   const dotsX = 80;
   const dotsY = 520;
   let cursor = dotsX;
+  // Only the three flagship projects — six names would overflow this row.
   const dotSpans = projects
+    .slice(0, 3)
     .map((p) => {
       const circle = `<circle cx="${cursor + 8}" cy="${dotsY}" r="7" fill="${p.color}" />`;
       const labelX = cursor + 24;
