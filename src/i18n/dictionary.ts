@@ -36,6 +36,7 @@ export const dictionary = {
       role: "Role",
       stack: "Stack",
       decision: "Notable technical decision",
+      highlights: "Highlights",
       github: "GitHub",
     },
     footer: {
@@ -108,6 +109,7 @@ export const dictionary = {
       role: "Função",
       stack: "Stack",
       decision: "Decisão técnica de destaque",
+      highlights: "Destaques",
       github: "GitHub",
     },
     footer: {

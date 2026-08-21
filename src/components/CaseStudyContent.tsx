@@ -90,14 +90,36 @@ export function CaseStudyContent({ project }: { project: Project }) {
           </div>
         )}
 
-        <div className="mt-8">
-          <dt className="text-xs font-semibold uppercase tracking-wide text-foreground/50">
-            {t.work.decision}
-          </dt>
-          <dd className="mt-2 max-w-2xl leading-relaxed text-foreground/80">
-            {project.decision[lang]}
-          </dd>
+        <div className="mt-8 space-y-6">
+          {[project.decision, ...(project.caseStudyDecisions ?? [])].map(
+            (decision, i) => (
+              <div key={decision[lang]}>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-foreground/50">
+                  {t.work.decision}
+                  {project.caseStudyDecisions && project.caseStudyDecisions.length > 0
+                    ? ` (${i + 1}/${1 + project.caseStudyDecisions.length})`
+                    : ""}
+                </dt>
+                <dd className="mt-2 max-w-2xl leading-relaxed text-foreground/80">
+                  {decision[lang]}
+                </dd>
+              </div>
+            ),
+          )}
         </div>
+
+        {project.highlights && project.highlights.length > 0 && (
+          <div className="mt-8">
+            <dt className="text-xs font-semibold uppercase tracking-wide text-foreground/50">
+              {t.work.highlights}
+            </dt>
+            <ul className="mt-3 max-w-2xl list-disc space-y-1.5 pl-5 text-foreground/80">
+              {project.highlights.map((highlight) => (
+                <li key={highlight[lang]}>{highlight[lang]}</li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {project.links && project.links.length > 0 && (
           <div className="mt-10 flex flex-wrap gap-3">
