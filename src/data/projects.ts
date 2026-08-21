@@ -39,22 +39,68 @@ export const projects: Project[] = [
       pt: "Kit de ferramentas de TI interno e configurável para tickets, gestão de ativos/inventário e painéis administrativos, tudo em uma plataforma.",
     },
     problem: {
-      en: "IT teams end up running separate tools for tickets, assets, and reporting. Kyma puts all three behind one configurable, connector-based platform instead.",
-      pt: "Times de TI acabam usando ferramentas separadas para tickets, ativos e relatórios. O Kyma reúne os três atrás de uma plataforma configurável baseada em conectores.",
+      en: "IT teams end up running separate tools for tickets, assets, and reporting — and even within one tool, statuses and fields are usually hardcoded by whoever built it. Kyma puts tickets and assets in one platform where admins define the statuses, categories, and custom fields themselves.",
+      pt: "Times de TI acabam usando ferramentas separadas para tickets, ativos e relatórios — e mesmo dentro de uma única ferramenta, status e campos costumam vir fixos no código de quem a construiu. O Kyma reúne tickets e ativos em uma plataforma onde os admins definem os próprios status, categorias e campos personalizados.",
     },
     role: {
       en: "Solo developer — product, architecture & integrations",
       pt: "Desenvolvedor solo — produto, arquitetura e integrações",
     },
-    stack: [],
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "React Hook Form",
+      "Zod",
+      "TanStack Query",
+      "Prisma",
+      "PostgreSQL",
+      "better-auth",
+      "Recharts",
+      "Vitest",
+    ],
     status: {
-      en: "Early build — repo set up, Figma mockups in progress",
-      pt: "Em desenvolvimento inicial — repositório criado, mockups no Figma em andamento",
+      en: "Core features built — not deployed yet",
+      pt: "Funcionalidades principais prontas — ainda não implantado",
     },
     decision: {
-      en: "The integrations are built as connectors, not a single hard-coded workflow, so Kyma can map onto whatever ticketing or asset system a team already runs. First connector is for TeamDynamix, so it fits into the infrastructure IT departments already have instead of asking them to rip it out.",
-      pt: "As integrações são construídas como conectores, não como um fluxo único fixo no código, para que o Kyma se adapte a qualquer sistema de tickets ou ativos que um time já use. O primeiro conector é para o TeamDynamix, para se encaixar na infraestrutura que os times de TI já têm em vez de pedir para trocarem tudo.",
+      en: "Statuses aren't a hardcoded enum — they're rows in the database, each with a color, sort order, and an isTerminal flag marking it as a \"done\" state. SLA-overdue and open-ticket counts key off that flag, not the label text, so an admin can rename \"Resolved\" to whatever they want without breaking the logic that depends on it.",
+      pt: "Status não são um enum fixo no código — são linhas no banco de dados, cada uma com cor, ordem de exibição e uma flag isTerminal que marca um estado como \"concluído\". O cálculo de atraso de SLA e de tickets em aberto usa essa flag, não o texto do rótulo, então um admin pode renomear \"Resolvido\" para o que quiser sem quebrar a lógica que depende disso.",
     },
+    caseStudyDecisions: [
+      {
+        en: "Beyond tickets and assets, admins can define entirely new record types from the UI — a custom entity gets its own typed fields (text, number, select, or a relation to an existing ticket/asset/user), stored in a generic entity-attribute-value table since the schema itself isn't known ahead of time. Because the database can't enforce a field's type or required-ness on a generic value column, that validation happens in application code before anything gets written.",
+        pt: "Além de tickets e ativos, admins podem definir tipos de registro totalmente novos pela interface — uma entidade personalizada recebe seus próprios campos tipados (texto, número, seleção, ou uma relação com um ticket/ativo/usuário existente), guardados em uma tabela genérica de entidade-atributo-valor, já que o schema em si não é conhecido de antemão. Como o banco não consegue impor o tipo ou a obrigatoriedade de um campo numa coluna de valor genérica, essa validação acontece no código da aplicação antes de qualquer gravação.",
+      },
+    ],
+    highlights: [
+      {
+        en: "Admin-configurable dashboard widgets",
+        pt: "Widgets do painel configuráveis pelo admin",
+      },
+      {
+        en: "Ticket ↔ asset linking",
+        pt: "Vínculo entre tickets e ativos",
+      },
+      {
+        en: "In-app notifications and an audit log, both built on the same polymorphic entity-reference pattern so they can attach to any record type",
+        pt: "Notificações no app e um log de auditoria, ambos construídos sobre o mesmo padrão polimórfico de referência a entidades, para que possam se ligar a qualquer tipo de registro",
+      },
+      {
+        en: "Multi-branch/location support",
+        pt: "Suporte a múltiplas filiais/localizações",
+      },
+      {
+        en: "Deployment-configurable ticket numbering (e.g. \"KYM-1042\")",
+        pt: "Numeração de tickets configurável por ambiente (ex.: \"KYM-1042\")",
+      },
+      {
+        en: "Role-based access (Admin/Staff)",
+        pt: "Acesso baseado em papel (Admin/Equipe)",
+      },
+    ],
     links: [{ label: "GitHub", href: "https://github.com/Kensyy/kyma" }],
     accent: "violet",
   },
@@ -134,8 +180,8 @@ export const projects: Project[] = [
     slug: "pullup",
     name: "PullUp",
     pitch: {
-      en: "A mobile social app for students with opt-in, time-boxed location sharing.",
-      pt: "Um app social mobile para estudantes com compartilhamento de localização opcional e por tempo limitado.",
+      en: "A mobile social app for opt-in, time-boxed location sharing — privacy and safety as core constraints, not afterthoughts.",
+      pt: "Um app social mobile para compartilhamento de localização opcional e por tempo limitado — privacidade e segurança como restrições centrais, não um adendo.",
     },
     problem: {
       en: "Most location-sharing apps default to always-on, which feels invasive. PullUp makes sharing explicit, temporary, and scoped to everyone or just friends.",
@@ -145,11 +191,55 @@ export const projects: Project[] = [
       en: "Solo developer — product & mobile engineering",
       pt: "Desenvolvedor solo — produto e engenharia mobile",
     },
-    stack: ["React Native", "Expo", "Supabase"],
-    decision: {
-      en: "Age verification runs on government ID instead of a .edu email gate. It's more friction at signup, but it actually confirms who someone is instead of trusting an email domain, and it works for anyone, not just people at a .edu school.",
-      pt: "A verificação de idade usa documento oficial em vez de um filtro por e-mail .edu. É mais fricção no cadastro, mas realmente confirma quem é a pessoa em vez de confiar num domínio de e-mail, e funciona para qualquer um, não só quem estuda em instituições americanas.",
+    stack: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Supabase",
+      "TanStack Query",
+      "NativeWind",
+      "React Navigation",
+    ],
+    status: {
+      en: "Friends-tier MVP in progress — ID verification designed but not wired up yet (self-attestation only)",
+      pt: "MVP do nível Amigos em andamento — verificação de idade desenhada mas ainda não implementada (apenas autodeclaração)",
     },
+    decision: {
+      en: "A database check constraint — not just application code — makes it structurally impossible to insert a public-tier share with exact coordinates, or a friends-tier share with a zone instead of coordinates. If a bug ever tried to leak precise location to the public tier, Postgres would reject the write outright.",
+      pt: "Uma constraint de verificação no banco de dados — não só no código da aplicação — torna estruturalmente impossível inserir um compartilhamento de nível público com coordenadas exatas, ou um compartilhamento de nível amigos com uma zona em vez de coordenadas. Se algum bug tentasse vazar localização precisa para o nível público, o Postgres rejeitaria a gravação.",
+    },
+    caseStudyDecisions: [
+      {
+        en: "Friendships are stored as one canonically-ordered row per pair (the lower user id always goes first), with a uniqueness constraint on that pair. That's what makes blocking durable: a \"blocked\" row occupies the pair's only available slot, so a fresh request from either side hits the constraint and fails instead of creating a workaround row.",
+        pt: "Amizades são guardadas como uma única linha por par, ordenada de forma canônica (o menor id de usuário sempre vem primeiro), com uma constraint de unicidade nesse par. É isso que torna o bloqueio durável: uma linha \"blocked\" ocupa o único espaço disponível para aquele par, então um novo pedido de qualquer um dos lados esbarra na constraint e falha, em vez de criar uma linha alternativa.",
+      },
+      {
+        en: "Expired shares don't just stop showing — a scheduled Postgres function nulls out the latitude/longitude columns and deactivates the row, so precise location data doesn't sit in the database after a share ends. That was a design rule from day one, not something bolted on later.",
+        pt: "Compartilhamentos expirados não apenas somem da tela — uma função do Postgres, executada em horário programado, zera as colunas de latitude/longitude e desativa a linha, para que dados precisos de localização não fiquem parados no banco depois que um compartilhamento termina. Essa foi uma regra de design desde o início, não algo adicionado depois.",
+      },
+    ],
+    highlights: [
+      {
+        en: "Two visibility tiers — Friends (exact location, mutual only) and Public (zone-level, ID-verified) — enforced at the database layer, not just in app code",
+        pt: "Dois níveis de visibilidade — Amigos (localização exata, só mútuos) e Público (nível de zona, com verificação de idade) — aplicados na camada de banco de dados, não só no código do app",
+      },
+      {
+        en: "Real-time friend location updates via Supabase's built-in subscriptions — no hand-built WebSocket layer",
+        pt: "Atualizações de localização de amigos em tempo real via subscriptions nativas do Supabase — sem uma camada de WebSocket construída à mão",
+      },
+      {
+        en: "One-tap \"stop sharing,\" accessible from anywhere in the app",
+        pt: "Botão de \"parar compartilhamento\" com um toque, acessível de qualquer lugar do app",
+      },
+      {
+        en: "Fixed-set quick reactions on an active share — no free text",
+        pt: "Reações rápidas de conjunto fixo em um compartilhamento ativo — sem texto livre",
+      },
+      {
+        en: "Push notifications when a friend starts sharing",
+        pt: "Notificações push quando um amigo começa a compartilhar",
+      },
+    ],
     links: [{ label: "GitHub", href: "https://github.com/Kensyy/pullup" }],
     accent: "rose",
   },

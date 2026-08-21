@@ -12,7 +12,7 @@ export const dictionary = {
         "I build full-stack products and internal tools, from ITSM platforms to consumer apps.",
       location:
         "Based in Rio Grande do Sul, Brazil. Open to full-stack and IT/help-desk-dev roles.",
-      now: "Now: building out Kyma's TeamDynamix connector.",
+      now: "Now: getting Kyma deployed — Vercel + Supabase setup is the last step.",
       bio: "I'm finishing a Computer Science degree at UNIJUÍ (Universidade Regional do Noroeste do Estado do Rio Grande do Sul). I like owning things end to end, from the data model through the UI, and I'd rather get the architecture right than patch it later.",
       ctaContact: "Get in touch",
       ctaWork: "View my work",
@@ -85,7 +85,7 @@ export const dictionary = {
         "Eu crio produtos full-stack e ferramentas internas, de plataformas de ITSM a aplicativos para o consumidor final.",
       location:
         "Baseado no Rio Grande do Sul, Brasil. Aberto a vagas de full-stack e TI/help-desk-dev.",
-      now: "Agora: desenvolvendo a integração do Kyma com o TeamDynamix.",
+      now: "Agora: colocando o Kyma no ar — falta só configurar Vercel + Supabase.",
       bio: "Estou concluindo a graduação em Ciência da Computação na UNIJUÍ (Universidade Regional do Noroeste do Estado do Rio Grande do Sul). Gosto de assumir as coisas do início ao fim, do modelo de dados até a interface, e prefiro acertar a arquitetura a corrigi-la depois.",
       ctaContact: "Entrar em contato",
       ctaWork: "Ver meus projetos",
