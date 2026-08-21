@@ -35,11 +35,18 @@ export function CaseStudyContent({ project }: { project: Project }) {
               {project.pitch[lang]}
             </p>
           </div>
-          {project.status && (
-            <Badge className="shrink-0 bg-amber-500/10 text-amber-700 ring-1 ring-inset ring-amber-500/20 dark:text-amber-300">
-              {project.status[lang]}
-            </Badge>
-          )}
+          <div className="flex shrink-0 flex-wrap items-start justify-end gap-2">
+            {project.forFun && (
+              <Badge className="bg-fuchsia-500/10 text-fuchsia-700 ring-1 ring-inset ring-fuchsia-500/20 dark:text-fuchsia-300">
+                {t.work.forFun}
+              </Badge>
+            )}
+            {project.status && (
+              <Badge className="bg-amber-500/10 text-amber-700 ring-1 ring-inset ring-amber-500/20 dark:text-amber-300">
+                {project.status[lang]}
+              </Badge>
+            )}
+          </div>
         </div>
 
         <div className="mt-8">

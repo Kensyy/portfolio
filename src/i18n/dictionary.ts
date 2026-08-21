@@ -38,6 +38,7 @@ export const dictionary = {
       decision: "Notable technical decision",
       highlights: "Highlights",
       github: "GitHub",
+      forFun: "For fun",
     },
     footer: {
       builtWith:
@@ -111,6 +112,7 @@ export const dictionary = {
       decision: "Decisão técnica de destaque",
       highlights: "Destaques",
       github: "GitHub",
+      forFun: "Por diversão",
     },
     footer: {
       builtWith:
