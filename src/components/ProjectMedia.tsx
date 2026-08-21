@@ -2,6 +2,7 @@ import type { Project } from "@/data/projects";
 import type { Lang } from "@/i18n/LanguageContext";
 import { withBasePath } from "@/lib/site";
 import { MockupPlaceholder } from "@/components/MockupPlaceholder";
+import { accentClasses } from "@/lib/accent";
 
 const gridClassByCount: Record<number, string> = {
   1: "grid grid-cols-1",
@@ -16,6 +17,7 @@ export function ProjectMedia({
   overviewLabel,
   detailLabel,
   flowLabel,
+  comingSoonLabel,
 }: {
   project: Project;
   lang: Lang;
@@ -23,8 +25,22 @@ export function ProjectMedia({
   overviewLabel: string;
   detailLabel: string;
   flowLabel: string;
+  comingSoonLabel: string;
 }) {
   const shots = project.screenshots;
+
+  if (project.mediaComingSoon) {
+    const classes = accentClasses[project.accent];
+    return (
+      <div
+        className={`flex aspect-[21/9] w-full items-center justify-center rounded-lg border border-dashed ${classes.mockupBorder} ${classes.mockupBg}`}
+      >
+        <p className={`text-sm font-medium ${classes.mockupText}`}>
+          {comingSoonLabel}
+        </p>
+      </div>
+    );
+  }
 
   if (shots && shots.length > 0) {
     return (

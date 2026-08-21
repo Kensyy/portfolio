@@ -39,6 +39,7 @@ export const dictionary = {
       highlights: "Highlights",
       github: "GitHub",
       forFun: "For fun",
+      comingSoon: "Screenshots coming soon",
     },
     footer: {
       builtWith:
@@ -113,6 +114,7 @@ export const dictionary = {
       highlights: "Destaques",
       github: "GitHub",
       forFun: "Por diversão",
+      comingSoon: "Capturas de tela em breve",
     },
     footer: {
       builtWith:

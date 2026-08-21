@@ -25,8 +25,12 @@ export type Project = {
   /** Feature breadth, shown only on the case study page. */
   highlights?: LocalizedText[];
   /** Real screenshots, captured from a running local build. Falls back to
-   *  mockup placeholders when absent. */
+   *  mockup placeholders when absent, unless mediaComingSoon is set. */
   screenshots?: Screenshot[];
+  /** Shows a plain "screenshots coming soon" panel instead of mockup
+   *  placeholders — for projects where a fake wireframe would be misleading
+   *  (e.g. a native app, not a web UI). */
+  mediaComingSoon?: boolean;
   status?: LocalizedText;
   /** Marks a side/passion project outside the full-stack professional track. */
   forFun?: boolean;
@@ -445,6 +449,7 @@ export const projects: Project[] = [
       pt: "Desenvolvedor solo — game design, programação de gameplay e netcode",
     },
     stack: ["Godot 4.7", "C#", ".NET"],
+    mediaComingSoon: true,
     forFun: true,
     decision: {
       en: "Player-count difficulty scaling is one tunable constant (+35% per player beyond the first) feeding a single formula, instead of enemy HP, enemy damage, boss stats, and spawn counts each picking their own curve. Solo play stays at each scene's authored baseline; a full 6-player party fights at 2.75x — and retuning the whole game's difficulty is a one-line change.",

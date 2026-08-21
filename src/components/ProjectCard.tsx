@@ -48,6 +48,7 @@ export function ProjectCard({ project }: { project: Project }) {
           overviewLabel={t.work.overview}
           detailLabel={t.work.detail}
           flowLabel={t.work.flow}
+          comingSoonLabel={t.work.comingSoon}
         />
       </div>
 
