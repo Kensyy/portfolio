@@ -103,8 +103,8 @@ export const experience: ExperienceEntry[] = [
         pt: "Contribuí para o produto mobile Força de Vendas e participei dos primeiros testes de responsividade, incluindo o comportamento específico necessário para iOS.",
       },
       {
-        en: "Created a C# extension for GeneXus that integrated with the company's service-order workflow.",
-        pt: "Criei uma extensão em C# para GeneXus integrada ao fluxo de ordens de serviço da empresa.",
+        en: "Built a C# extension that connected GeneXus's Changed Objects screen to Sispatch, streamlining how modified objects were registered against the relevant service order.",
+        pt: "Criei uma extensão em C# que conectava a tela Changed Objects do GeneXus ao Sispatch, facilitando o registro dos objetos alterados na ordem de serviço correspondente.",
       },
       {
         en: "Developed business-management features in GeneXus and provided technical support to internal teams and clients using the company's software.",
