@@ -58,6 +58,8 @@ export function CaseStudyContent({ project }: { project: Project }) {
             detailLabel={t.work.detail}
             flowLabel={t.work.flow}
             comingSoonLabel={t.work.comingSoon}
+            openImageLabel={t.work.openImage}
+            closeImageLabel={t.work.closeImage}
           />
         </div>
 

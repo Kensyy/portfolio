@@ -16,7 +16,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
-  const title = `${project.name} — ${siteTitle}`;
+  const title = `${project.name} | ${siteTitle}`;
   const description = project.pitch.en;
   const ogImage = `og-${project.slug}.png`;
   return {

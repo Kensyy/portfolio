@@ -4,7 +4,7 @@ export type ExperienceEntry = {
   company: string;
   role: LocalizedText;
   startDate: string;
-  /** Set to null for an ongoing role — rendered as "Present" / "Atual". */
+  /** Set to null for an ongoing role: rendered as "Present" / "Atual". */
   endDate: string | null;
   bullets: LocalizedText[];
 };
@@ -44,8 +44,8 @@ export const experience: ExperienceEntry[] = [
     endDate: "Aug 2025",
     bullets: [
       {
-        en: "Built and maintained full-stack web applications — both front-end interfaces and back-end server logic.",
-        pt: "Desenvolvi e mantive aplicações web full-stack — interfaces de front-end e lógica de back-end.",
+        en: "Built and maintained full-stack web applications: both front-end interfaces and back-end server logic.",
+        pt: "Desenvolvi e mantive aplicações web full-stack: interfaces de front-end e lógica de back-end.",
       },
       {
         en: "Worked within a development team following professional software engineering practices and workflows.",

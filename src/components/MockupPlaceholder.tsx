@@ -3,7 +3,7 @@ import { accentClasses } from "@/lib/accent";
 
 /**
  * Stand-in for a real screenshot. Clearly labeled "Mockup" so it never
- * reads as a finished product screenshot — swap for next/image once real
+ * reads as a finished product screenshot: swap for next/image once real
  * screenshots exist.
  */
 export function MockupPlaceholder({

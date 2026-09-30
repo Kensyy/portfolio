@@ -97,7 +97,7 @@ export function HomeContent() {
                     <p className="text-sm text-foreground/60">{entry.company}</p>
                   </div>
                   <p className="text-sm text-foreground/50">
-                    {entry.startDate} —{" "}
+                    {entry.startDate} {t.experience.dateSeparator}{" "}
                     {entry.endDate ?? t.experience.present}
                   </p>
                 </div>

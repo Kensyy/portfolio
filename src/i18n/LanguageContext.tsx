@@ -13,7 +13,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // One-time client-only read of a browser API (localStorage) that isn't
-    // available during static export — can't be a lazy useState initializer.
+    // available during static export: can't be a lazy useState initializer.
     const stored = localStorage.getItem("lang");
     // eslint-disable-next-line react-hooks/set-state-in-effect
     if (stored === "en" || stored === "pt") setLangState(stored);

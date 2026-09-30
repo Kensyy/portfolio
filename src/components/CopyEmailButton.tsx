@@ -19,7 +19,7 @@ export function CopyEmailButton({
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     } catch {
-      // clipboard unavailable — no-op, the mailto link elsewhere still works
+      // clipboard unavailable: no-op, the mailto link elsewhere still works
     }
   };
 

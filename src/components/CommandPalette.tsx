@@ -37,7 +37,7 @@ export function CommandPalette() {
 
   useEffect(() => {
     // Resets the palette's local UI state when it's opened from outside
-    // (keyboard shortcut or nav button) — an external trigger, not a
+    // (keyboard shortcut or nav button): an external trigger, not a
     // self-cascading render.
     if (open) {
       // eslint-disable-next-line react-hooks/set-state-in-effect

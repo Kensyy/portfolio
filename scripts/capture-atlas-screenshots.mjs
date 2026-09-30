@@ -6,7 +6,7 @@ const outDir = fileURLToPath(new URL("../public/screenshots", import.meta.url));
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
 
-// View-only — no forms submitted, no auth, no writes.
+// View-only: no forms submitted, no auth, no writes.
 await page.goto("http://localhost:3000/en");
 await page.waitForTimeout(4000);
 const cookieBtn = page.getByText("GOT IT", { exact: true });
