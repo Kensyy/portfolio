@@ -20,7 +20,7 @@ export const experience: ExperienceEntry[] = [
     },
     startDate: "Mar 2026",
     endDate: null,
-    technologies: ["C#", ".NET", "SQL", "Desktop"],
+    technologies: ["C#", ".NET", "SQL", "Windows Services", "Desktop"],
     bullets: [
       {
         en: "Provide technical support and troubleshooting for company-developed software, and configure client project setups based on engineering specifications.",
@@ -33,6 +33,10 @@ export const experience: ExperienceEntry[] = [
       {
         en: "Built a C# database comparison tool that generates SQL update scripts across up to 13 tables for existing client databases, replacing a fully manual process.",
         pt: "Desenvolvi uma ferramenta em C# de comparação de bancos de dados que gera scripts SQL de atualização para até 13 tabelas em bancos de clientes existentes, substituindo um processo totalmente manual.",
+      },
+      {
+        en: "Built a service watchdog that restarts an internal Windows service on schedule, verifies that it starts successfully, and detects when it stalls in StopPending, Stopped, or StartPending states.",
+        pt: "Desenvolvi um watchdog que reinicia um serviço interno do Windows em horário programado, verifica se ele iniciou corretamente e detecta quando fica travado nos estados StopPending, Stopped ou StartPending.",
       },
     ],
   },
@@ -88,15 +92,23 @@ export const experience: ExperienceEntry[] = [
     },
     startDate: "Aug 2021",
     endDate: "Jun 2023",
-    technologies: ["GeneXus", "ERP", "Low-code"],
+    technologies: ["GeneXus", "C#", "JavaScript", "HTML/CSS", "iOS", "ERP"],
     bullets: [
       {
-        en: "Built business management systems on the GeneXus low-code platform, following established company standards and patterns.",
-        pt: "Desenvolvi sistemas de gestão empresarial na plataforma low-code GeneXus, seguindo padrões e normas estabelecidos pela empresa.",
+        en: "Contributed to PlintView, a web business-intelligence product for dashboards, KPIs, management reports, and performance tracking.",
+        pt: "Contribuí para o PlintView, um produto web de business intelligence voltado a dashboards, KPIs, relatórios gerenciais e acompanhamento de desempenho.",
       },
       {
-        en: "Provided technical support to internal teams and clients using the company's software products.",
-        pt: "Prestei suporte técnico para times internos e clientes que usavam os produtos de software da empresa.",
+        en: "Contributed to the Força de Vendas mobile product and participated in its first responsive-layout tests, including the platform-specific behavior required for iOS.",
+        pt: "Contribuí para o produto mobile Força de Vendas e participei dos primeiros testes de responsividade, incluindo o comportamento específico necessário para iOS.",
+      },
+      {
+        en: "Created a C# extension for GeneXus that integrated with the company's service-order workflow.",
+        pt: "Criei uma extensão em C# para GeneXus integrada ao fluxo de ordens de serviço da empresa.",
+      },
+      {
+        en: "Developed business-management features in GeneXus and provided technical support to internal teams and clients using the company's software.",
+        pt: "Desenvolvi funcionalidades para sistemas de gestão em GeneXus e prestei suporte técnico a times internos e clientes dos softwares da empresa.",
       },
     ],
   },
